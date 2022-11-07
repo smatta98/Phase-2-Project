@@ -1,25 +1,32 @@
+import React, {useState, useEffect} from 'react';
+import NavBar from './NavBar.js'
 import logo from './logo.svg';
+import { BrowswerRouter, Route, Switch } from "react-router-dom";
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
+  const [dogImage, setDogImage] = useState(null)
+
+
+  const dogData = useEffect(() => {
+    fetch('https://dog.ceo/api/breeds/image/random')
+        .then(response => response.json())
+        .then(data => setDogImage(data.message));
+}, []);
+
+
+return (
+  <div>
+     <div classname = 'NavBarContainer'>
+<NavBar/>
+  </div>
+   <img src = {dogImage}></img>
+  </div>
+)
+
+}
 export default App;
+
+
+
