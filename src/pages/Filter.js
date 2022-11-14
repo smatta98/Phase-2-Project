@@ -4,6 +4,7 @@ function Facts (){
 
     const [breeds, setBreeds] = useState(null)
     const [searchInput, setSearchInput] = useState('');
+    const [filteredBreedResults, setFilteredBreedResults] = useState([]);
 
     // const factsData = useEffect(() => {
     //     fetch('https://dog.ceo/api/breeds/list/all')
@@ -20,6 +21,7 @@ function Facts (){
         breeds.filter((breed) => {
             return Object.values(breed).join('').toLowerCase().includes(searchInput.toLowerCase())
         })
+        setFilteredBreedResults(filteredBreeds)
     }
 
     const filteredBreeds = breeds.filter((breed) => {
