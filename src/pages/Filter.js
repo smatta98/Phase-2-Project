@@ -22,7 +22,9 @@ function Facts (){
         })
     }
 
-
+    const filteredBreeds = breeds.filter((breed) => {
+        return Object.values(breed).join('').toLowerCase().includes(searchInput.toLowerCase())
+        })
     
 
     return (
