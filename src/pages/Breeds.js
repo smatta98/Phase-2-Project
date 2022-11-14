@@ -15,37 +15,51 @@ function Breeds (){
                 // console.log(data)
               setBreeds(data.message)
             });
-    },[]);
+    }, []);
 
 
-   useEffect (() => {
-    if (breeds){
-        setBreedList(Object.keys(breeds))
-    }
-   }, [breeds])
+    console.log(breeds)
+
+   
+
+   
 
 
-
-
-
-   const breedArray = breedList.map((breed) => {
-    return (
-        <div>
-            <li>
-                {breed}
-            </li>
-        </div>
-    )
-   })
-
+       
 return (
     <div>
         <h1>This is the Breeds Landing Page</h1>
-           <ul>
-            {breedArray}
-           </ul>
+        {/* <ul>
+            {breedListing}
+        </ul> */}
     </div>
 )
 }
 
 export default Breeds;
+
+
+
+    //    const breedKeys = Object.keys(breeds)
+
+    //    console.log(breedKeys)
+       
+
+    // useEffect (() => {
+    //     if (breeds){
+    //         setBreedList(Object.keys(breeds))
+    //     }
+    //    }, [breeds])
+    
+    
+    // const breedArray = breedKeys.map((breed) => {
+    
+    //     return (
+    //         <div>
+    //             <li>
+    //                 {breed}
+    //             </li>
+    //         </div>
+    //     )
+    // })
+    
