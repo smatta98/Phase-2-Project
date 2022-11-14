@@ -27,7 +27,7 @@ function NavBar() {
         <NavLink
         to="/facts">
             <Typography>
-               Random Facts
+               Filter Breeds
             </Typography> 
         </NavLink>
 

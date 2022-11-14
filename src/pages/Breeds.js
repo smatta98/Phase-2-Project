@@ -18,8 +18,30 @@ function Breeds (){
     }, []);
 
 
-    console.log(breeds)
+    useEffect (() => {
+        if (breeds){
+            setBreedList(Object.keys(breeds))
+        }
+       }, [breeds])
 
+       const breedArray = breedList.map((breed) => {
+
+     return (
+            <div>
+                <li>
+                    {breed}
+                </li>
+            </div>
+        )
+    })
+
+
+
+    
+    // const breedKeys = Object.keys(breeds)
+    // const breedListing = breedKeys.map((breed) => {
+
+   
    
 
    
@@ -29,9 +51,9 @@ function Breeds (){
 return (
     <div>
         <h1>This is the Breeds Landing Page</h1>
-        {/* <ul>
-            {breedListing}
-        </ul> */}
+        <ul>
+            {breedArray}
+        </ul>
     </div>
 )
 }
@@ -45,11 +67,7 @@ export default Breeds;
     //    console.log(breedKeys)
        
 
-    // useEffect (() => {
-    //     if (breeds){
-    //         setBreedList(Object.keys(breeds))
-    //     }
-    //    }, [breeds])
+    
     
     
     // const breedArray = breedKeys.map((breed) => {
