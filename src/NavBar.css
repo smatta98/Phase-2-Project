@@ -4,8 +4,12 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    background-color: blue;
-    color: white
+    background-color: slategrey;
+    color: blue;
+}
+
+img {
+    size: 10cm;
 }
 
 

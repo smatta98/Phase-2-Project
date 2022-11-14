@@ -12,13 +12,13 @@ function NavBar() {
          <NavLink
         to="/"
         exact>
-        <Typography>
+            <Typography>
                Home
             </Typography>
       </NavLink>
         
       <NavLink
-        to="/breeds">
+        to="/breeds" exact>
             <Typography>
                Breeds
             </Typography>
