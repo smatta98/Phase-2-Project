@@ -2,12 +2,35 @@ import React, {useState, useEffect} from "react"
 
 function Facts (){
 
-   
+    const [breeds, setBreeds] = useState(null)
+    const [searchInput, setSearchInput] = useState('');
 
+    // const factsData = useEffect(() => {
+    //     fetch('https://dog.ceo/api/breeds/list/all')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             // console.log(data)
+    //           setBreeds(data.message)
+    //         });
+    // }, []);
+
+
+    const searchItems = (searchValue) => {
+        setSearchInput(searchValue)
+        breeds.filter((breed) => {
+            return Object.values(breed).join('').toLowerCase().includes(searchInput.toLowerCase())
+        })
+    }
+
+
+    const filteredBreeds = breeds.filter((breed) => {
+        return Object.values(breed).join('').toLowerCase().includes(searchInput.toLowerCase())
+        })
 
     return (
         <div>
-            <h1> This is the Facts Landing Page</h1>
+            <h1> This is the Filter Landing Page</h1>
+            <input icon = 'search' placeholder = 'Search...'   onChange={(e) => searchItems(e.target.value)}/>
             
         </div>
     )

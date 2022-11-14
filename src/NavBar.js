@@ -25,7 +25,7 @@ function NavBar() {
         </NavLink>
 
         <NavLink
-        to="/facts">
+        to="/filter">
             <Typography>
                Filter Breeds
             </Typography> 
