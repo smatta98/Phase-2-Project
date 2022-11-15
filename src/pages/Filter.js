@@ -16,23 +16,28 @@ function Facts (){
     // }, []);
 
 
-    const searchItems = (searchValue) => {
-        setSearchInput(searchValue)
-        breeds.filter((breed) => {
-            return Object.values(breed).join('').toLowerCase().includes(searchInput.toLowerCase())
-        })
-        setFilteredBreedResults(filteredBreeds)
-    }
+    // const searchItems = (searchValue) => {
+    //     setSearchInput(searchValue)
+    //     if (searchInput !== '') {
+    //         const filteredData = breeds.filter((breed) => {
+    //             return Object.values(breed).join('').toLowerCase().includes(searchInput.toLowerCase())
+    //     })
+    //     setFilteredBreedResults(filteredBreeds)
+    //     }
+    //     else {
+    //         setFilteredBreedResults(breeds)
+    //     }
+    // }
 
-    const filteredBreeds = breeds.filter((breed) => {
-        return Object.values(breed).join('').toLowerCase().includes(searchInput.toLowerCase())
-        })
+    // const filteredBreeds = breeds.filter((breed) => {
+    //     return Object.values(breed).join('').toLowerCase().includes(searchInput.toLowerCase())
+    //     })
     
 
     return (
         <div>
             <h1> This is the Filter Landing Page</h1>
-            <input icon = 'search' placeholder = 'Search...'   onChange={(e) => searchItems(e.target.value)}/>
+            {/* <input icon = 'search' placeholder = 'Search...'   onChange={(e) => searchItems(e.target.value)}/> */}
             
         </div>
     )
