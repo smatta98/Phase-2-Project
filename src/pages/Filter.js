@@ -14,7 +14,7 @@ function Facts ({breeds}){
         setAddDog({
           ...addDog,
           [event.target.id]: event.target.value,
-        });
+     });
       }
 
     const searchItems = (searchValue) => {
@@ -30,35 +30,36 @@ function Facts ({breeds}){
         }
     }
 
-    // const postRequest = {
-    //     method: 'POST',
-    //     headers: {'Content-Type': 'application/json'},
-    //     body: JSON.stringify(addDog)
-    //    }
+    const postRequest = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(addDog)
+       }
        
 
-    // //    https://e94ac211-1edc-4dd6-8678-6a1d7bbe06c4.mock.pstmn.io/addDog
+    //    https://e94ac211-1edc-4dd6-8678-6a1d7bbe06c4.mock.pstmn.io/addDog
+   // http://localhost:3000/filter
        
-    //    fetch('http://localhost:3000/filter',postRequest)
-    //     .then(response => response.json())
-    //     .then(data => handleChange(data))
+       fetch('https://e94ac211-1edc-4dd6-8678-6a1d7bbe06c4.mock.pstmn.io/addDog',postRequest)
+        .then(response => response.json())
+        .then(data => handleChange(data))
 
     
-        // function handleSubmit(event){
-        //     event.preventDefault();
-        //     // postRequest()
-        // }
-
-        function handleSubmit(event) {
+        function handleSubmit(event){
             event.preventDefault();
-            fetch('https://e94ac211-1edc-4dd6-8678-6a1d7bbe06c4.mock.pstmn.io/addDog', {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body:JSON.stringify(addDog),
-            }, []);
-          }
+            postRequest()
+        }
+
+        // function handleSubmit(event) {
+        //     event.preventDefault();
+        //     fetch('https://e94ac211-1edc-4dd6-8678-6a1d7bbe06c4.mock.pstmn.io/addDog', {
+        //       method: "POST",
+        //       headers: {
+        //         "Content-Type": "application/json",
+        //       },
+        //       body:JSON.stringify(addDog),
+        //     }, []);
+        //   }
 
     return (
         <div>
