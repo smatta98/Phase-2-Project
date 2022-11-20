@@ -5,8 +5,17 @@ function Facts ({breeds}){
 
     const [searchDogs, setSearchDogs] = useState('');
     const [filteredBreedResults, setFilteredBreedResults] = useState([]);
+    const [addDog, setAddDog] = useState({
+        breed: "",
+        subBreed: ""
+     })
       
-
+     function handleChange(event) {
+        setAddDog({
+          ...addDog,
+          [event.target.id]: event.target.value,
+        });
+      }
 
     const searchItems = (searchValue) => {
         setSearchDogs(searchValue)
@@ -21,24 +30,45 @@ function Facts ({breeds}){
         }
     }
 
-   
-    // const configObj = {
+    // const postRequest = {
     //     method: 'POST',
     //     headers: {'Content-Type': 'application/json'},
-    //     body: JSON.stringify(stateBody)
+    //     body: JSON.stringify(addDog)
     //    }
        
-    //    fetch('https://e94ac211-1edc-4dd6-8678-6a1d7bbe06c4.mock.pstmn.io/addDog',configObj)
+
+    // //    https://e94ac211-1edc-4dd6-8678-6a1d7bbe06c4.mock.pstmn.io/addDog
+       
+    //    fetch('http://localhost:3000/filter',postRequest)
     //     .then(response => response.json())
-    //     .then(data => setStateBody(data))
+    //     .then(data => handleChange(data))
 
     
+        // function handleSubmit(event){
+        //     event.preventDefault();
+        //     // postRequest()
+        // }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            fetch('https://e94ac211-1edc-4dd6-8678-6a1d7bbe06c4.mock.pstmn.io/addDog', {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body:JSON.stringify(addDog),
+            }, []);
+          }
 
     return (
         <div>
             <h1> This is the Filter Landing Page</h1>
             <input icon = 'search' placeholder = 'Search...'   onChange={(e) => searchItems(e.target.value)}/>
-            <input icon = 'search' placeholder = "Don't see your dogs breed below? Add it here!"/> 
+            <form> 
+            <button onSubmit = {handleSubmit}>Submit</button>
+            <input type = "text" id = "breed" placeholder = "Breed" value = {addDog.breed} onChange = {handleChange}/> 
+            <input type="text" id="subBreed" placeholder = "Sub Breed" value = {addDog.subBreed} onChange = {handleChange} />
+            </form>
              {searchDogs.length > 1 ? (filteredBreedResults.map((breed) => {
 
                 return (
