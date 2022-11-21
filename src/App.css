@@ -49,7 +49,8 @@
 }
 
 img{
-   size-adjust: auto ;
+   height:max-content ;
+   width: max-content;
 }
 
 .submitButton {
