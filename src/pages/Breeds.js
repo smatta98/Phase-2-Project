@@ -5,7 +5,7 @@ function Breeds (){
 
     // const [stateBody, setStateBody] = useState()
     const [breeds, setBreeds] = useState([])
-    const [breedList, setBreedList] = useState(null)
+   
 
 
      const factsData = useEffect(() => {

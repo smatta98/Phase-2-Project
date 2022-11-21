@@ -26,7 +26,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/breeds" element={<Breeds />} />
+        <Route path="/breeds" element={<Breeds breeds = {Object.keys(breeds)}/>} />
         <Route path="/filter" element={<Filter breeds = {Object.keys(breeds)} />} />
       </Routes>
     </BrowserRouter>

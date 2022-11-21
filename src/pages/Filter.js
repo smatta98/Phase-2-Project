@@ -31,6 +31,7 @@ function Facts({ breeds }) {
     }
 
 
+
     function handleSubmit(event){
     event.preventDefault();
     const postRequest = {
@@ -44,16 +45,12 @@ function Facts({ breeds }) {
         .then(data => handleChange(data))
 
     }   
-    // function handleSubmit(event) {
-    //     event.preventDefault();
-    //     postRequest()
-    // }
-
+   
 
     return (
-        <div>
+        <div className="Filter">
             <h1> Search for Your Favorite Breed!</h1>
-            <h2>If you don't see your dog's breed below, add it to the list!</h2>
+            <h2>If you don't see your dog's breed below, add it to the api!</h2>
             <input icon='search' placeholder='Search...' onChange={(e) => searchItems(e.target.value)} />
             <form>
                 <button className = 'submitButton' onSubmit={handleSubmit}>Submit</button>
