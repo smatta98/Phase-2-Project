@@ -25,7 +25,7 @@ function Breeds (){
        
 return (
     <div className="Breeds">
-        <h1>This is the Breeds Landing Page</h1>
+        <h1>Master List of Breeds</h1>
         <ul>
             {Object.keys(breeds).map((breed) => {
                  return (

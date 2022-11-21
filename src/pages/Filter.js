@@ -49,10 +49,11 @@ function Facts({ breeds }) {
 
     return (
         <div>
-            <h1> This is the Filter Landing Page</h1>
+            <h1> Search for Your Favorite Breed!</h1>
+            <h2>If you don't see your dog's breed below, add it to the list!</h2>
             <input icon='search' placeholder='Search...' onChange={(e) => searchItems(e.target.value)} />
             <form>
-                <button onSubmit={handleSubmit}>Submit</button>
+                <button className = 'submitButton' onSubmit={handleSubmit}>Submit</button>
                 <input type="text" id="breed" placeholder="Breed" value={addDog.breed} onChange={handleChange} />
                 <input type="text" id="subBreed" placeholder="Sub Breed" value={addDog.subBreed} onChange={handleChange} />
             </form>
@@ -60,7 +61,7 @@ function Facts({ breeds }) {
 
                 return (
                     <li>
-                        {breed}
+                        {breed.toUpperCase()}
                     </li>
                 )
             })
@@ -68,7 +69,7 @@ function Facts({ breeds }) {
 
                 return (
                     <li>
-                        {breed}
+                        {breed.toUpperCase()}
                     </li>
                 )
             }))
