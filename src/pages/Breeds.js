@@ -24,14 +24,14 @@ function Breeds (){
 
        
 return (
-    <div>
+    <div className="Breeds">
         <h1>This is the Breeds Landing Page</h1>
         <ul>
             {Object.keys(breeds).map((breed) => {
                  return (
             <div>
                 <li>
-                    {breed}
+                    {breed.toLocaleUpperCase()}
                 </li>
             </div>
            )
