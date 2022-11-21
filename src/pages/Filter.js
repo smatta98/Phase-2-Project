@@ -30,6 +30,9 @@ function Facts({ breeds }) {
         }
     }
 
+
+    function handleSubmit(event){
+    event.preventDefault();
     const postRequest = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -40,11 +43,11 @@ function Facts({ breeds }) {
         .then(response => response.json())
         .then(data => handleChange(data))
 
-
-    function handleSubmit(event) {
-        event.preventDefault();
-        postRequest()
-    }
+    }   
+    // function handleSubmit(event) {
+    //     event.preventDefault();
+    //     postRequest()
+    // }
 
 
     return (
