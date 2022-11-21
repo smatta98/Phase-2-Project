@@ -1,15 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 
 
 function Breeds ({breeds}){
 
+    const [addNewDog, setAddNewDog] = useState('')
+    const [newBreedList, setNewBreedList] = useState(breeds)
 
+    function handleAddNewDog (e){
+        setAddNewDog(e.target.value)
+    }
 
+    function handleNewBreedList(){
+        const newBreeds = breeds.concat({addNewDog})
+        setNewBreedList(newBreeds)
+        setAddNewDog('')
+    }
 
        
 return (
     <div className="Breeds">
         <h1>Master List of Breeds</h1>
+        <input type = "text" value = {addNewDog} onChange = {handleAddNewDog} />
+        <button type = "button" onClick = {handleNewBreedList}>Add a Dog!</button>
         <ul>
             {breeds.map((breed) => {
                  return (
