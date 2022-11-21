@@ -44,12 +44,18 @@
 
 .Breeds {
   background-color: aquamarine;
+  background-size: auto;
   color: blueviolet
 }
 
+img{
+   size-adjust: auto ;
+}
+
 .submitButton {
-color: gray;
+color: black;
 padding: 0cm;
+background-color: darkgray
 
 }
 
