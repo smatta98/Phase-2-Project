@@ -17,7 +17,7 @@ const dogData = useEffect(() => {
   },[]);
 
     return (
-        <div>
+        <div className = 'HomePage'>
             <h1>Welcome to the Shiv's Phase 2 Project!</h1>
                 <h2>Please enjoy these random images of cute pups</h2>
                 <img src = {dogImage} alt = 'Random Dog'></img>
