@@ -12,7 +12,7 @@ function Facts({ breeds }) {
 
     function handleChange(event) {
         setAddDog({
-            ...addDog,
+            ...breeds,
             [event.target.id]: event.target.value,
         });
     }

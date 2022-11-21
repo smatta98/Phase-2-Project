@@ -3,28 +3,30 @@ import React, {useState, useEffect} from "react";
 
 function Breeds ({breeds}){
 
-    // const [breeds, setBreeds] = useState([])
-   
+    const [newDog, setNewDog] = useState({breed: ''})
+    const [newBreeds, setNewBreeds] = useState({breeds})
+    
+    function handleNewDog(event){
+        setNewDog({[event.target.id]: event.target.value})
+    }
 
-
-    //  const factsData = useEffect(() => {
-    //     fetch('https://dog.ceo/api/breeds/list/all')
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             setBreeds(data.message)
-    //         });
-    // },[]);
-
-
-
-
-   
+    function handleSubmit (e){
+        e.preventDefault();
+        const newBreeds = breeds.append({newDog})
+        
+        setNewBreeds(newBreeds)
+    }
 
 
        
 return (
     <div className="Breeds">
         <h1>Master List of Breeds</h1>
+        <h2>Don't see your dog's breed? Add it in!</h2>
+        <form> 
+            <button onSubmit={handleSubmit}>Add a Dog</button>
+            <input type = 'submit' id = 'newDog' placeholder="Add a dog!" value = {newDog} onChange = {handleNewDog}> </input>
+        </form>
         <ul>
             {breeds.map((breed) => {
                  return (
