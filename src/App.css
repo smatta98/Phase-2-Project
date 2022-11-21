@@ -49,6 +49,7 @@
 }
 
 img{
+  size: auto;
    height:max-content ;
    width: max-content;
 }
