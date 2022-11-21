@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 
 function Breeds ({breeds}){
@@ -6,16 +6,19 @@ function Breeds ({breeds}){
     const [addNewDog, setAddNewDog] = useState('')
     const [newBreedList, setNewBreedList] = useState(breeds)
 
+
+
     function handleAddNewDog (e){
         setAddNewDog(e.target.value)
     }
 
     function handleNewBreedList(){
-        const newBreeds = breeds.concat({addNewDog})
-        setNewBreedList(newBreeds)
+        setNewBreedList([...newBreedList,addNewDog, breeds]);
         setAddNewDog('')
     }
 
+    console.log(newBreedList)
+   
        
 return (
     <div className="Breeds">
