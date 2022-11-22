@@ -1,32 +1,35 @@
+import { render } from "@testing-library/react";
 import React, {useEffect, useState} from "react";
 
 
 function Breeds ({breeds}){
 
     const [addNewDog, setAddNewDog] = useState('')
-    const [newBreedList, setNewBreedList] = useState(breeds)
+    // const [newBreedList, setNewBreedList] = useState([])
+    const copyBreeds = breeds
 
 
+    console.log({breeds})
+    
+ 
 
     function handleAddNewDog (e){
         setAddNewDog(e.target.value)
     }
 
     function handleNewBreedList(){
-        setNewBreedList([...newBreedList,addNewDog, breeds]);
+        const copyBreeds = breeds.push(addNewDog)
         setAddNewDog('')
     }
-
-    console.log(newBreedList)
    
-       
+    
 return (
     <div className="Breeds">
         <h1>Master List of Breeds</h1>
         <input type = "text" value = {addNewDog} onChange = {handleAddNewDog} />
         <button type = "button" onClick = {handleNewBreedList}>Add a Dog!</button>
         <ul>
-            {breeds.map((breed) => {
+            {copyBreeds.map((breed) => {
                  return (
             <div>
                 <li>
